@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -50,32 +51,113 @@ class FoodSearchPage extends HookConsumerWidget {
                   });
                 })),
           ),
+          const SizedBox(
+            height: 26,
+          ),
           Expanded(
               child: SingleChildScrollView(
             scrollDirection: Axis.vertical,
             child: Wrap(
+              alignment: WrapAlignment.center,
               direction: Axis.horizontal,
               spacing: 40,
+              runSpacing: 12,
               children: [
-                Container(
-                  height: 128,
-                  width: 160,
-                  color: Colors.blue,
+                Stack(
+                  alignment:Alignment.topCenter,
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.only(top: 64),
+                      height: 128,
+                      width: 160,
+                      color: Colors.blue,
+                    ),
+                    const Image(image: AssetImage('assets/fried_chicken.png'))
+                  ],
                 ),
-                Container(
-                  height: 128,
-                  width: 160,
-                  color: Colors.blue,
+                Stack(
+                  alignment:Alignment.topCenter,
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.only(top: 64),
+                      height: 128,
+                      width: 160,
+                      color: Colors.blue,
+                    ),
+                    const Image(image: AssetImage('assets/gratin.png'))
+                  ],
                 ),
-                Container(
-                  height: 128,
-                  width: 160,
-                  color: Colors.blue,
+                Stack(
+                  alignment:Alignment.topCenter,
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.only(top: 64),
+                      height: 128,
+                      width: 160,
+                      color: Colors.blue,
+                    ),
+                    const Image(image: AssetImage('assets/hamburger.png'))
+                  ],
                 ),
-                Container(
-                  height: 128,
-                  width: 160,
-                  color: Colors.blue,
+                Stack(
+                  alignment:Alignment.topCenter,
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.only(top: 64),
+                      height: 128,
+                      width: 160,
+                      color: Colors.blue,
+                    ),
+                    const Image(image: AssetImage('assets/ice_cream.png'))
+                  ],
+                ),
+                Stack(
+                  alignment:Alignment.topCenter,
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.only(top: 64),
+                      height: 128,
+                      width: 160,
+                      color: Colors.blue,
+                    ),
+                    const Image(image: AssetImage('assets/cake.png'))
+                  ],
+                ),
+                Stack(
+                  alignment:Alignment.topCenter,
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.only(top: 64),
+                      height: 128,
+                      width: 160,
+                      color: Colors.blue,
+                    ),
+                    const Image(image: AssetImage('assets/ramen.png'))
+                  ],
+                ),
+                Stack(
+                  alignment:Alignment.topCenter,
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.only(top: 64),
+                      height: 128,
+                      width: 160,
+                      color: Colors.blue,
+                    ),
+                    const Image(image: AssetImage('assets/pizza.png'))
+                  ],
+                ),
+                Stack(
+                  alignment:Alignment.topCenter,
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.only(top: 64),
+                      height: 128,
+                      width: 160,
+                      color: Colors.blue,
+                    ),
+                    const Image(image: AssetImage('assets/sundae.png'))
+                  ],
                 ),
               ],
             ),
