@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -24,6 +23,7 @@ class FoodSearchPage extends HookConsumerWidget {
                 width: 350,
                 child: SearchAnchor(builder: (BuildContext context, SearchController controller) {
                   return SearchBar(
+                    hintText: 'Search Super Foodoo',
                     controller: controller,
                     padding: const MaterialStatePropertyAll<EdgeInsets>(EdgeInsets.symmetric(horizontal: 16.0)),
                     onTap: () {
@@ -64,99 +64,540 @@ class FoodSearchPage extends HookConsumerWidget {
               runSpacing: 12,
               children: [
                 Stack(
-                  alignment:Alignment.topCenter,
+                  alignment: Alignment.topCenter,
                   children: [
                     Container(
                       margin: const EdgeInsets.only(top: 64),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10.0),
+                        color: Colors.grey,
+                      ),
                       height: 128,
                       width: 160,
-                      color: Colors.blue,
+                      child: const Padding(
+                          padding: EdgeInsets.only(top: 64),
+                          child: Column(
+                            children: [
+                              Text(
+                                'Chicken Wings',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 15,
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w500,
+                                  height: 0.09,
+                                  letterSpacing: -0.33,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 30,
+                              ),
+                              Text.rich(
+                                TextSpan(
+                                  children: [
+                                    TextSpan(
+                                      text: '\$',
+                                      style: TextStyle(
+                                        color: Color(0xFFFFC532),
+                                        fontSize: 16,
+                                        fontFamily: 'Poppins',
+                                        fontWeight: FontWeight.w500,
+                                        height: 0.09,
+                                        letterSpacing: -0.35,
+                                      ),
+                                    ),
+                                    TextSpan(
+                                      text: '20.99',
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 16,
+                                        fontFamily: 'Poppins',
+                                        fontWeight: FontWeight.w500,
+                                        height: 0.09,
+                                        letterSpacing: -0.35,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )
+                            ],
+                          )),
                     ),
-                    const Image(image: AssetImage('assets/fried_chicken.png'))
+                    const SizedBox(
+                      width: 160,
+                      child: Image(image: AssetImage('assets/search_page/fried_chicken.png')),
+                    )
                   ],
                 ),
                 Stack(
-                  alignment:Alignment.topCenter,
+                  alignment: Alignment.topCenter,
                   children: [
                     Container(
                       margin: const EdgeInsets.only(top: 64),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10.0),
+                        color: Colors.grey,
+                      ),
                       height: 128,
                       width: 160,
-                      color: Colors.blue,
+                      child: const Padding(
+                          padding: EdgeInsets.only(top: 64),
+                          child: Column(
+                            children: [
+                              Text(
+                                'Gratin',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 15,
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w500,
+                                  height: 0.09,
+                                  letterSpacing: -0.33,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 30,
+                              ),
+                              Text.rich(
+                                TextSpan(
+                                  children: [
+                                    TextSpan(
+                                      text: '\$',
+                                      style: TextStyle(
+                                        color: Color(0xFFFFC532),
+                                        fontSize: 16,
+                                        fontFamily: 'Poppins',
+                                        fontWeight: FontWeight.w500,
+                                        height: 0.09,
+                                        letterSpacing: -0.35,
+                                      ),
+                                    ),
+                                    TextSpan(
+                                      text: '20.99',
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 16,
+                                        fontFamily: 'Poppins',
+                                        fontWeight: FontWeight.w500,
+                                        height: 0.09,
+                                        letterSpacing: -0.35,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )
+                            ],
+                          )),
                     ),
-                    const Image(image: AssetImage('assets/gratin.png'))
+                    const SizedBox(
+                      width: 160,
+                      child: Image(image: AssetImage('assets/search_page/gratin.png')),
+                    )
                   ],
                 ),
                 Stack(
-                  alignment:Alignment.topCenter,
+                  alignment: Alignment.topCenter,
                   children: [
                     Container(
                       margin: const EdgeInsets.only(top: 64),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10.0),
+                        color: Colors.grey,
+                      ),
                       height: 128,
                       width: 160,
-                      color: Colors.blue,
+                      child: const Padding(
+                          padding: EdgeInsets.only(top: 64),
+                          child: Column(
+                            children: [
+                              Text(
+                                'Sundae',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 15,
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w500,
+                                  height: 0.09,
+                                  letterSpacing: -0.33,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 30,
+                              ),
+                              Text.rich(
+                                TextSpan(
+                                  children: [
+                                    TextSpan(
+                                      text: '\$',
+                                      style: TextStyle(
+                                        color: Color(0xFFFFC532),
+                                        fontSize: 16,
+                                        fontFamily: 'Poppins',
+                                        fontWeight: FontWeight.w500,
+                                        height: 0.09,
+                                        letterSpacing: -0.35,
+                                      ),
+                                    ),
+                                    TextSpan(
+                                      text: '20.99',
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 16,
+                                        fontFamily: 'Poppins',
+                                        fontWeight: FontWeight.w500,
+                                        height: 0.09,
+                                        letterSpacing: -0.35,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )
+                            ],
+                          )),
                     ),
-                    const Image(image: AssetImage('assets/hamburger.png'))
+                    const SizedBox(
+                      width: 160,
+                      child: Image(image: AssetImage('assets/search_page/sundae.png')),
+                    )
                   ],
                 ),
                 Stack(
-                  alignment:Alignment.topCenter,
+                  alignment: Alignment.topCenter,
                   children: [
                     Container(
                       margin: const EdgeInsets.only(top: 64),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10.0),
+                        color: Colors.grey,
+                      ),
                       height: 128,
                       width: 160,
-                      color: Colors.blue,
+                      child: const Padding(
+                          padding: EdgeInsets.only(top: 64),
+                          child: Column(
+                            children: [
+                              Text(
+                                'Supreme Pizza',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 15,
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w500,
+                                  height: 0.09,
+                                  letterSpacing: -0.33,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 30,
+                              ),
+                              Text.rich(
+                                TextSpan(
+                                  children: [
+                                    TextSpan(
+                                      text: '\$',
+                                      style: TextStyle(
+                                        color: Color(0xFFFFC532),
+                                        fontSize: 16,
+                                        fontFamily: 'Poppins',
+                                        fontWeight: FontWeight.w500,
+                                        height: 0.09,
+                                        letterSpacing: -0.35,
+                                      ),
+                                    ),
+                                    TextSpan(
+                                      text: '20.99',
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 16,
+                                        fontFamily: 'Poppins',
+                                        fontWeight: FontWeight.w500,
+                                        height: 0.09,
+                                        letterSpacing: -0.35,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )
+                            ],
+                          )),
                     ),
-                    const Image(image: AssetImage('assets/ice_cream.png'))
+                    const SizedBox(
+                      width: 160,
+                      child: Image(image: AssetImage('assets/search_page/pizza.png')),
+                    )
                   ],
                 ),
                 Stack(
-                  alignment:Alignment.topCenter,
+                  alignment: Alignment.topCenter,
                   children: [
                     Container(
                       margin: const EdgeInsets.only(top: 64),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10.0),
+                        color: Colors.grey,
+                      ),
                       height: 128,
                       width: 160,
-                      color: Colors.blue,
+                      child: const Padding(
+                          padding: EdgeInsets.only(top: 64),
+                          child: Column(
+                            children: [
+                              Text(
+                                'Extra Meat Burger',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 15,
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w500,
+                                  height: 0.09,
+                                  letterSpacing: -0.33,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 30,
+                              ),
+                              Text.rich(
+                                TextSpan(
+                                  children: [
+                                    TextSpan(
+                                      text: '\$',
+                                      style: TextStyle(
+                                        color: Color(0xFFFFC532),
+                                        fontSize: 16,
+                                        fontFamily: 'Poppins',
+                                        fontWeight: FontWeight.w500,
+                                        height: 0.09,
+                                        letterSpacing: -0.35,
+                                      ),
+                                    ),
+                                    TextSpan(
+                                      text: '20.99',
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 16,
+                                        fontFamily: 'Poppins',
+                                        fontWeight: FontWeight.w500,
+                                        height: 0.09,
+                                        letterSpacing: -0.35,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )
+                            ],
+                          )),
                     ),
-                    const Image(image: AssetImage('assets/cake.png'))
+                    const SizedBox(
+                      width: 160,
+                      child: Image(image: AssetImage('assets/search_page/hamburger.png')),
+                    )
                   ],
                 ),
                 Stack(
-                  alignment:Alignment.topCenter,
+                  alignment: Alignment.topCenter,
                   children: [
                     Container(
                       margin: const EdgeInsets.only(top: 64),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10.0),
+                        color: Colors.grey,
+                      ),
                       height: 128,
                       width: 160,
-                      color: Colors.blue,
+                      child: const Padding(
+                          padding: EdgeInsets.only(top: 64),
+                          child: Column(
+                            children: [
+                              Text(
+                                'Berry cake',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 15,
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w500,
+                                  height: 0.09,
+                                  letterSpacing: -0.33,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 30,
+                              ),
+                              Text.rich(
+                                TextSpan(
+                                  children: [
+                                    TextSpan(
+                                      text: '\$',
+                                      style: TextStyle(
+                                        color: Color(0xFFFFC532),
+                                        fontSize: 16,
+                                        fontFamily: 'Poppins',
+                                        fontWeight: FontWeight.w500,
+                                        height: 0.09,
+                                        letterSpacing: -0.35,
+                                      ),
+                                    ),
+                                    TextSpan(
+                                      text: '20.99',
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 16,
+                                        fontFamily: 'Poppins',
+                                        fontWeight: FontWeight.w500,
+                                        height: 0.09,
+                                        letterSpacing: -0.35,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )
+                            ],
+                          )),
                     ),
-                    const Image(image: AssetImage('assets/ramen.png'))
+                    const SizedBox(
+                      width: 120,
+                      child: Image(image: AssetImage('assets/search_page/cake.png')),
+                    )
                   ],
                 ),
                 Stack(
-                  alignment:Alignment.topCenter,
+                  alignment: Alignment.topCenter,
                   children: [
                     Container(
                       margin: const EdgeInsets.only(top: 64),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10.0),
+                        color: Colors.grey,
+                      ),
                       height: 128,
                       width: 160,
-                      color: Colors.blue,
+                      child: const Padding(
+                          padding: EdgeInsets.only(top: 64),
+                          child: Column(
+                            children: [
+                              Text(
+                                'Ramen',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 15,
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w500,
+                                  height: 0.09,
+                                  letterSpacing: -0.33,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 30,
+                              ),
+                              Text.rich(
+                                TextSpan(
+                                  children: [
+                                    TextSpan(
+                                      text: '\$',
+                                      style: TextStyle(
+                                        color: Color(0xFFFFC532),
+                                        fontSize: 16,
+                                        fontFamily: 'Poppins',
+                                        fontWeight: FontWeight.w500,
+                                        height: 0.09,
+                                        letterSpacing: -0.35,
+                                      ),
+                                    ),
+                                    TextSpan(
+                                      text: '20.99',
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 16,
+                                        fontFamily: 'Poppins',
+                                        fontWeight: FontWeight.w500,
+                                        height: 0.09,
+                                        letterSpacing: -0.35,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )
+                            ],
+                          )),
                     ),
-                    const Image(image: AssetImage('assets/pizza.png'))
+                    const SizedBox(
+                      width: 160,
+                      child: Image(image: AssetImage('assets/search_page/ramen.png')),
+                    )
                   ],
                 ),
                 Stack(
-                  alignment:Alignment.topCenter,
+                  alignment: Alignment.topCenter,
                   children: [
                     Container(
                       margin: const EdgeInsets.only(top: 64),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10.0),
+                        color: Colors.grey,
+                      ),
                       height: 128,
                       width: 160,
-                      color: Colors.blue,
+                      child: const Padding(
+                          padding: EdgeInsets.only(top: 64),
+                          child: Column(
+                            children: [
+                              Text(
+                                'Ice-cream',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 15,
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w500,
+                                  height: 0.09,
+                                  letterSpacing: -0.33,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 30,
+                              ),
+                              Text.rich(
+                                TextSpan(
+                                  children: [
+                                    TextSpan(
+                                      text: '\$',
+                                      style: TextStyle(
+                                        color: Color(0xFFFFC532),
+                                        fontSize: 16,
+                                        fontFamily: 'Poppins',
+                                        fontWeight: FontWeight.w500,
+                                        height: 0.09,
+                                        letterSpacing: -0.35,
+                                      ),
+                                    ),
+                                    TextSpan(
+                                      text: '20.99',
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 16,
+                                        fontFamily: 'Poppins',
+                                        fontWeight: FontWeight.w500,
+                                        height: 0.09,
+                                        letterSpacing: -0.35,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )
+                            ],
+                          )),
                     ),
-                    const Image(image: AssetImage('assets/sundae.png'))
+                    Container(
+                      margin: const EdgeInsets.only(top: 20),
+                      width: 160,
+                      child: const Image(image: AssetImage('assets/search_page/ice_cream.png')),
+                    )
                   ],
                 ),
               ],

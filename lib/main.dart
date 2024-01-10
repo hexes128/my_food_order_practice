@@ -1,59 +1,58 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:my_food_order_practice/page/favorite_page.dart';
+import 'package:my_food_order_practice/page/feature_page.dart';
 import 'package:my_food_order_practice/page/food_search_page.dart';
 
 void main() {
-  runApp( ProviderScope(child: MyApp()));
+  runApp(ProviderScope(child: MyApp()));
 }
 
 class MyApp extends HookConsumerWidget {
   MyApp({super.key});
+
   final GlobalKey<NavigatorState> navKey = GlobalKey();
 
   @override
-  Widget build(BuildContext context,WidgetRef ref) {
-    return
-      MaterialApp.router(
-
-
-        debugShowCheckedModeBanner: false,
-        title: 'Formosa Oil APP',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        routerConfig: GoRouter(
-          navigatorKey: navKey,
-
-          routes: [
-            //-----------------------------------------登入
-            GoRoute(path: '/', builder: (context, state) => const MyHomePage(title: '123',), routes: [
-              //-----------------------------------------註冊
-              GoRoute(path: 'food_search_page', name: 'food_search_page', builder: (context, state) => FoodSearchPage()),
-
-
-            ]),
-          ],
-        ),
-        builder: (context, child) {
-          return  child ?? const Text('child');
-        },
-      );
-
+  Widget build(BuildContext context, WidgetRef ref) {
+    return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
+      title: 'Formosa Oil APP',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      routerConfig: GoRouter(
+        navigatorKey: navKey,
+        routes: [
+          GoRoute(
+              path: '/',
+              builder: (context, state) => const MyHomePage(
+                    title: '123',
+                  ),
+              routes: [
+                //-----------------------------------------註冊
+                GoRoute(
+                  path: 'food_search_page',
+                  name: 'food_search_page',
+                  builder: (context, state) => const FoodSearchPage(),
+                ),
+                GoRoute(path: 'feature_page', name: 'feature_page', builder: (context, state) => const FeaturePage(), ),
+                GoRoute(path: 'favorite_page', name: 'favorite_page', builder: (context, state) => const FavoritePage(), ),
+              ]),
+        ],
+      ),
+      builder: (context, child) {
+        return child ?? const Text('child');
+      },
+    );
   }
 }
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
 
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
 
   final String title;
 
@@ -62,10 +61,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
-
-
-
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -84,7 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: const Center(
+      body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
         child: Column(
@@ -103,21 +98,24 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-
+            ElevatedButton(
+                onPressed: () {
+                  context.pushNamed('food_search_page');
+                },
+                child: const Text('搜尋頁')),
+            ElevatedButton(
+                onPressed: () {
+                  context.pushNamed('feature_page');
+                },
+                child: const Text('feature')),
+            ElevatedButton(
+                onPressed: () {
+                  context.pushNamed('favorite_page');
+                },
+                child: const Text('favorite')),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: (){
-          context.pushNamed('food_search_page');
-
-        },
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
